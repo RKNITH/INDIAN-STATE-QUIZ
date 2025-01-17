@@ -119,13 +119,21 @@ button:hover {
   margin-top: 1.5rem;
 }
 
+#options {
+  display: flex;
+  /* Ensure options are visible and laid out */
+  flex-direction: column;
+}
+
 .option {
+  display: inline-block;
   background-color: white;
   border: 2px solid var(--secondary-color);
   padding: 1rem;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s;
+  color: #e74c3c;
 }
 
 .option:hover {

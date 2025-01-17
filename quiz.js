@@ -205,7 +205,7 @@ class Quiz {
     this.scoreEl = document.getElementById('score');
     this.correctAnswersEl = document.getElementById('correct-answers');
     this.timeTakenEl = document.getElementById('time-taken');
-    
+
     this.totalQuestionsEl.textContent = quizData.length;
   }
 
@@ -225,7 +225,7 @@ class Quiz {
     const question = quizData[this.currentQuestion];
     this.questionEl.textContent = question.question;
     this.currentQuestionEl.textContent = this.currentQuestion + 1;
-    
+
     this.optionsEl.innerHTML = '';
     question.options.forEach((option, index) => {
       const button = document.createElement('button');
@@ -239,11 +239,11 @@ class Quiz {
   startTimer() {
     this.timeLeft = 30;
     this.updateTimerDisplay();
-    
+
     this.timer = setInterval(() => {
       this.timeLeft--;
       this.updateTimerDisplay();
-      
+
       if (this.timeLeft <= 0) {
         this.moveToNext();
       }
@@ -259,24 +259,24 @@ class Quiz {
   checkAnswer(selectedIndex) {
     const correct = quizData[this.currentQuestion].correct;
     const options = this.optionsEl.children;
-    
+
     options[selectedIndex].classList.add(selectedIndex === correct ? 'correct' : 'wrong');
     options[correct].classList.add('correct');
-    
+
     if (selectedIndex === correct) {
       this.score++;
     }
-    
+
     Array.from(options).forEach(option => {
       option.disabled = true;
     });
-    
+
     setTimeout(() => this.moveToNext(), 1000);
   }
 
   moveToNext() {
     clearInterval(this.timer);
-    
+
     if (this.currentQuestion < quizData.length - 1) {
       this.currentQuestion++;
       this.loadQuestion();
