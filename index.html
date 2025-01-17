@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian States & UTs Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <div id="start-screen" class="screen">
+      <h1>Indian States & UTs Quiz</h1>
+      <p>Test your knowledge of Indian states, union territories, and their capitals!</p>
+      <button id="start-btn">Start Quiz</button>
+    </div>
+
+    <div id="quiz-screen" class="screen hidden">
+      <div class="header">
+        <div class="timer">
+          <svg class="timer-svg" viewBox="0 0 100 100">
+            <circle r="45" cx="50" cy="50" class="timer-background"/>
+            <circle r="45" cx="50" cy="50" class="timer-progress"/>
+          </svg>
+          <span id="timer-text">30</span>
+        </div>
+        <div class="progress">
+          Question <span id="current-question">1</span>/<span id="total-questions">36</span>
+        </div>
+      </div>
+      
+      <div class="question-container">
+        <h2 id="question">What is the capital of...</h2>
+        <div class="options-container" id="options">
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="screen hidden">
+      <h2>Quiz Complete!</h2>
+      <div class="result-details">
+        <div class="score-circle">
+          <span id="score">0</span>/36
+        </div>
+        <div class="score-text">
+          <p>Correct Answers: <span id="correct-answers">0</span></p>
+          <p>Time Taken: <span id="time-taken">0</span> seconds</p>
+        </div>
+      </div>
+      <button id="retry-btn">Try Again</button>
+    </div>
+  </div>
+  <script type="module" src="quiz.js"></script>
+</body>
+</html>
